@@ -39,7 +39,10 @@ router.post(`${BASE_URL}/deploy`, async (ctx) => {
   console.log('query', ctx.request.body);
 
   try {
-    return
+    ctx.status = 200;
+    //ctx.body = err.response.data;
+    ctx.body = "RIGHT";
+    
     await deployContract(data);
   } catch (err) {
     ctx.status = err.response.status;
